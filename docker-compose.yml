@@ -1,0 +1,21 @@
+version: '3'
+services:
+  # NGINX (캐싱 서버)
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend
+
+  # ossdev-backend-server (느린 백엔드 서버) - Node.js로 실행
+  backend:
+    image: node:18-alpine
+    volumes:
+      - ./backend/server.js:/app/server.js # 5초 지연 백엔드 서버 연결
+    working_dir: /app
+    command: node server.js # node.js 서버 실행
+    expose:
+      - "80"
