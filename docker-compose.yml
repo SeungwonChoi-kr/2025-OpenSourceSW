@@ -10,12 +10,12 @@ services:
     depends_on:
       - backend
 
-  # ossdev-backend-server (느린 백엔드 서버) - Node.js로 실행
+  # ossdev-backend-server (느린 응답 백엔드 서버) - Node.js로 실행
   backend:
     image: node:18-alpine
     volumes:
-      - ./backend/server.js:/app/server.js # 5초 지연 백엔드 서버 연결
+      - ./backend/server.js:/app/server.js # 백엔드 서버 연결
     working_dir: /app
-    command: node server.js # node.js 서버 실행
+    command: node server.js 백엔드 서버 실행
     expose:
       - "80"
