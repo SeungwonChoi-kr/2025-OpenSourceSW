@@ -17,7 +17,7 @@ function getServerIP() {
 }
 
 const server = http.createServer((req, res) => {
-    console.log(`백엔드 서버에 요청이 도착했습니다! (5초 지연 시작...)`);
+    console.log(`[요청 도착] 주소: ${req.url} (5초 지연 시작...)`);
     
     // 5초(5000ms) 동안 멈췄다가 응답을 보냄
     setTimeout(() => {
@@ -28,6 +28,6 @@ const server = http.createServer((req, res) => {
 
 server.listen(80, () => {
     const ip = getServerIP(); // IP 가져오기
-    console.log(`느린 백엔드 서버가 80번 포트에서 대기 중입니다.`);
-    console.log(`백엔드 서버 내부 IP 주소: ${ip}`);
+    console.log(`[서버 시작] 느린 백엔드 서버가 80번 포트에서 대기 중입니다.`);
+    console.log(`[서버 시작] 백엔드 서버 내부 IP 주소: ${ip}`);
 });
