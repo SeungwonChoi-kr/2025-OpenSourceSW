@@ -14,11 +14,10 @@ sudo apt install nginx
 sudo nginx -t
 ```
 
-## 2. Wireshark 설치 및 실행
+## 2. Wireshark 설치
 ```bash
 sudo apt update
 sudo apt install wireshark -y
-sudo wireshark
 ```
 
 ## 3. Self-Signed 인증서 생성
@@ -70,3 +69,11 @@ python3 -m http.server 8080
 ## 6. HTTPS 서버 접속
 - 브라우저에서 아래 주소 접속<br> 
 `https://localhost`
+
+## 7. Wireshark 실행 및 캡처
+```bash
+sudo wireshark
+```
+> 실행 후 Loopback: lo 선택
+
+- HTTPS(443) 패킷 캡처
