@@ -79,7 +79,7 @@ python3 -m http.server 8080
 ```bash
 sudo wireshark
 ```
-> 실행 후 Loopback: lo 선택
+실행 후 Loopback: lo 선택
 
 **HTTPS(443) 패킷 캡처**
 - 필터 입력
