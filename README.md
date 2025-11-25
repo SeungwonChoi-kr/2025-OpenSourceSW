@@ -33,7 +33,7 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 ```
 
 ## 4. Nginx HTTPS 설정
-```bash
+```b
 # Nginx 설정 파일
 sudo vim /etc/nginx/sites-available/default
 
