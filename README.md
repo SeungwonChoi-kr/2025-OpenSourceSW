@@ -1,1 +1,1 @@
-# -2025-OpenSourceSW
+# Nginx | HTTPS (SSL/TLS)
