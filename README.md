@@ -7,20 +7,23 @@
 ## 개발 환경
 - Ubuntu
 
-## 1. Nginx 설치 및 실행
+---
+
+## 실습 방법
+### 1. Nginx 설치 및 실행
 ```bash
 sudo apt update
 sudo apt install nginx
 sudo nginx -t
 ```
 
-## 2. Wireshark 설치
+### 2. Wireshark 설치
 ```bash
 sudo apt update
 sudo apt install wireshark -y
 ```
 
-## 3. Self-Signed 인증서 생성
+### 3. Self-Signed 인증서 생성
 ```bash
 # Nginx용 인증서를 생성할 디렉터리 생성
 sudo mkdir -p /etc/nginx/ssl
@@ -31,7 +34,7 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 -keyout self.key -out self.crt
 ```
 
-## 4. Nginx HTTPS 설정
+### 4. Nginx HTTPS 설정
 ```bash
 # Nginx 설정 파일
 sudo vim /etc/nginx/sites-available/default
@@ -60,24 +63,46 @@ server {
 sudo systemctl restart nginx
 ```
 
-## 5. HTTP 서버 실행
+### 5. HTTP 서버 실행
 ```bash
 cd HTTPS_Server
 python3 -m http.server 8080
 ```
 
-## 6. HTTPS 서버 접속
+### 6. HTTPS 서버 접속
 - 브라우저에서 아래 주소 접속<br> 
 `https://localhost`
 
-## 7. Wireshark 실행 및 캡처
+### 7. Wireshark 실행 및 캡처
 ```bash
 sudo wireshark
 ```
 > 실행 후 Loopback: lo 선택
 
-### HTTPS(443) 패킷 캡처
+**HTTPS(443) 패킷 캡처**
 - 필터 입력
 ```ini
 tcp.port == 443
 ```
+브라우저에서 로그인 정보 입력 후 제출하면 다음과 같이 보임:
+- Client Hello
+- Server Hello
+- Change Cipher Spec
+- TLS Application Data (암호문)
+👉 로그인 정보가 노출되지 않음
+
+**HTTP(8080) 패킷 캡처**
+- 필터 입력
+```ini
+tcp.port == 8080
+```
+다음처럼 평문으로 보임:
+```sql
+GET /?user=유저&pw=1234 HTTP/1.1
+```
+👉 로그인 정보가 그대로 노출됨
+
+---
+
+## 프로젝트 구조
+- `HTTPS_Server` : HTTPS 서버용 index.html을 포함
