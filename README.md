@@ -76,4 +76,8 @@ sudo wireshark
 ```
 > 실행 후 Loopback: lo 선택
 
-- HTTPS(443) 패킷 캡처
+### HTTPS(443) 패킷 캡처
+- 필터 입력
+```ini
+tcp.port == 443
+```
