@@ -81,7 +81,7 @@ sudo wireshark
 ```
 실행 후 Loopback: lo 선택
 
-**HTTPS(443) 패킷 캡처**
+**1) HTTPS(443) 패킷 캡처**
 - 필터 입력
 ```ini
 tcp.port == 443
@@ -94,7 +94,7 @@ tcp.port == 443
 
 👉 로그인 정보가 노출되지 않음
 
-**HTTP(8080) 패킷 캡처**
+**2) HTTP(8080) 패킷 캡처**
 - 필터 입력
 ```ini
 tcp.port == 8080
