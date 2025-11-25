@@ -33,7 +33,7 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 ```
 
 ## 4. Nginx HTTPS 설정
-```b
+```bash
 # Nginx 설정 파일
 sudo vim /etc/nginx/sites-available/default
 
@@ -59,3 +59,14 @@ server {
 
 # 설정 후 Nginx 재시작
 sudo systemctl restart nginx
+```
+
+## 5. HTTP 서버 실행
+```bash
+cd HTTPS_Server
+python3 -m http.server 8080
+```
+
+## 6. HTTPS 서버 접속
+브라우저에서 아래 주소 접속
+`https://localhost`
