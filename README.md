@@ -38,7 +38,8 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 ```bash
 # Nginx 설정 파일
 sudo vim /etc/nginx/sites-available/default
-
+```
+```nginx
 # 내용을 아래처럼 교체
 server {
     listen 443 ssl;                              # 443번 포트에서 HTTPS 요청을 받겠다
@@ -58,7 +59,8 @@ server {
     listen 80;
     return 301 https://$host$request_uri;
 }
-
+```
+```bash
 # 설정 후 Nginx 재시작
 sudo systemctl restart nginx
 ```
