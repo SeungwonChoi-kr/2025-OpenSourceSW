@@ -68,5 +68,5 @@ python3 -m http.server 8080
 ```
 
 ## 6. HTTPS 서버 접속
-브라우저에서 아래 주소 접속
+브라우저에서 다음 주소 접속 : 
 `https://localhost`
