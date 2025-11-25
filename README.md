@@ -91,7 +91,7 @@ tcp.port == 443
 - Server Hello
 - Change Cipher Spec
 - TLS Application Data (암호문)
-<br>
+
 👉 로그인 정보가 노출되지 않음
 
 **HTTP(8080) 패킷 캡처**
