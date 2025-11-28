@@ -1,5 +1,5 @@
 # OpenSourceSW Team Project | 3조
-## Nginx
+### Nginx
 Nginx의 대표 기능(Load Balancing, Reverse Proxy, SSL/TLS Termination) 설계 및 구현
 > 각 기능은 독립된 브랜치로 구성되어 있습니다.
 
