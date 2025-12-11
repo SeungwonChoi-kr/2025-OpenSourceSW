@@ -3,6 +3,18 @@
 ## 단! 해당 VM에 이미 nginx, pip, venv및 venv를 통한 flask가 설치 완료 되어있어야 한다.
 
 
+----
+## 파일 알림
+### flask-lb.conf // nignx 설정파일
+### flask_server/app.py // 플라스크 서버 코드(기본 .sh 파일은 app.py로 설정되어있으니 가급적 이름 변경하지 말것)
+### 5flask_start.sh //간단하게 플라스크 서버 5001 포트부터 5005 포트로 5개 켜는 쉘스크립트
+### flask_stop.sh // 간단하게 켜진 플라스크 서버 5개 끄는 쉘스크립트(start.sh 로 켜진 서버 끄는용), 반드시 start 하면 stop 해줄 것.
+
+### 포트랑 실행되는 app.py는 이름바꾸고 싶으면  .sh 파일 수정할 것.
+----
+
+
+
 # 사전준비
 
 ## 만일 자기가 nignx 설정이 안되어있다?  
