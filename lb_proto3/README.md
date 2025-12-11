@@ -91,9 +91,21 @@ git clone 해서 이 브랜치로 바꾸기
 3. app.py(플라스크 서버 파일)이 있는 폴더로 이동
 4. venv 활성화(이건 해당 VM에서 만들고 활성화 해주어야함, 위치는 상관 없음)
 5. flask_start.sh 실행해서 서버 켜기
-6. 테스트하기
-7. flask_stop.sh 실행해서 서버 끄기
-8. VM끄기
+
+        bash flask_start.sh //이게 싫다? 그럼
+       
+        chmod +x flask_start.sh // 으로 실행권한 주고
+        ./flask_start.sh //로 실행할 것
+        
+7. 테스트하기
+8. flask_stop.sh 실행해서 서버 끄기
+
+        bash flask_stop.sh //이게 싫다? 그럼
+       
+        chmod +x flask_stop.sh // 으로 실행권한 주고
+        ./flask_stop.sh //로 실행할 것
+
+9. VM끄기
 
 의 순서이다.
 ### 무조건 stop 해줘야한다. 안그러면 ps aux | grep app.py 해서 일일이 kill 해주어야 하니 명심할 것.
