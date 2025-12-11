@@ -115,6 +115,9 @@ git clone 해서 이 브랜치로 바꾸기
 의 순서이다.
 ### 무조건 stop 해줘야한다. 안그러면 ps aux | grep app.py 해서 일일이 kill 해주어야 하니 명심할 것.
 
+### 참고로 현재 flask 는 0.0.0.0 으로 설정되어있으니 포트로도 접근 가능하니, 이거 막고 테스트하고싶으면
+### 127.0.0.1 로 내부통신만 활성화 시킬 것.
+
 &nbsp;
 
 ----
@@ -155,5 +158,4 @@ git clone 해서 이 브랜치로 바꾸기
     print(f"Requests per second  : {num_requests / total_time:.2f} req/s")
 
 이런식으로 출력코드가 존재하니 확인하면 된다.
-
 
